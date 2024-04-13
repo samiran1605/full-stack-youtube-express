@@ -32,7 +32,7 @@ const userSchema = new Schema(
             required: true,
         },
         coverImage: {
-            type: String,
+            type: String, //cloudinary url
         },
         watchHistory: [
             {
@@ -47,9 +47,10 @@ const userSchema = new Schema(
         refreshToken: {
             type: String
         }
-    }, {
-    timestamps: true
-}
+    },
+    {
+        timestamps: true
+    }
 )
 
 userSchema.pre("save", async function (next) {
